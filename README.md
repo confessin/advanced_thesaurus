@@ -6,6 +6,7 @@ An Advanced thesaurus which gets words meaning 1 level down.
 This will take up a list of keywords as argument and return a list of all keywords which can be built using thesaurus.
 
 For example: 
+
     Normal Synonyms for word "car"
     auto, automobile, bucket, buggy, bus, clunker, compact, convertible, conveyance, coupe, gas guzzler, hardtop, hatchback, heap*, jalopy, jeep, junker, limousine, machine, motor, motorcar, pickup, ride*, roadster, sedan, station wagon, subcompact, touring car, truck, van, wagon, wheels, wreck* 
 
