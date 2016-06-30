@@ -62,7 +62,7 @@ class MainThesaurusHandler():
     def get_negative_keywords(self, neg_kwds, synset):
         negative_keywords = []
         for negate in neg_kwds:
-            if negate.lower() in synset.lemma_names:
+            if negate.lower() in synset.lemma_names():
                 negative_keywords.append(synset)
             #for each negative kwd
             #find its synset
@@ -106,7 +106,7 @@ class MainThesaurusHandler():
                 if x in self.final_word_dict.keys():
                     continue
                 # TODO: add a separate loop for homonyms
-                cached_kwd_syns = set(copy.deepcopy(kwd_syns))
+                cached_kwd_syns = set(kwd_syns[:])
                 for i in kwd_syns:
                     #TODO(mrafi): remove negative kwds.
                     negative_keywords = self.get_negative_keywords(
@@ -118,7 +118,7 @@ class MainThesaurusHandler():
                         continue
                     if self.config['close_syns']:
                         types_of_kwd = i.lemmas  # XXX:for synonyms this is it
-                        temp = sorted(i.lemma_names)
+                        temp = sorted(i.lemma_names())
                         #if i in
                         for j in temp:
                             words_temp_syns.append('%s ' % (j.replace('_', ' ')))
